@@ -1,10 +1,10 @@
 # Netfix, service marketplace
 
-![netfix](/img/netfix.webp)
-
 ## Overview
 
 Netfix, service marketplace is a Django-based web application designed to connect service providers with customers in need. Through this platform, users can either offer or request a variety of services, ranging from home cleaning to carpentry. The aim is to create a one-stop solution for individuals to offer and avail different types of home and maintenance services.
+
+![netfix](/img/netfix.webp)
 
 ## Tech Stack
 
