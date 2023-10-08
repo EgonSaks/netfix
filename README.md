@@ -69,3 +69,23 @@ The project follows a typical Django project structure, with the main folder hou
 - main: Manages common features across the project.
 
 Each app contains essential Django files like **models.py** for database schema, **views.py** for backend logic, and **urls.py** for routing. Additionally, **forms.py** is used for form handling, and the **templates** directory is used for HTML templates.
+
+Sometimes, there might be multiple virtual environments, and you could be running the wrong one. If virtual environment happens to get corrupted then you can try recreating the virtual environment from scratch.
+
+```
+# Deactivate the current virtual environment if it's active
+deactivate
+
+# Delete the existing 'env' directory
+rm -r env
+
+# Create a new virtual environment
+python3 -m venv env
+
+# Activate the new virtual environment
+source env/bin/activate
+
+# Reinstall the dependencies
+pip install -r requirements.txt
+
+```
