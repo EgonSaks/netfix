@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
     'django.middleware.locale.LocaleMiddleware',
+    'netfix.middleware.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'netfix.urls'
