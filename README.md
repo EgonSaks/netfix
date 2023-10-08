@@ -19,7 +19,6 @@ Ensure that you have [Python 3.x](https://www.python.org/downloads/) and [pip](h
 ```bash
 git clone https://01.kood.tech/git/Egon/netfix
 cd netfix
-pip install -r requirements.txt
 ```
 
 ## Usage
@@ -29,6 +28,7 @@ To run the application, execute the following command in the project directory:
 ```bash
 python3 -m venv env 
 source env/bin/activate
+pip install -r requirements.txt
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
