@@ -18,7 +18,7 @@ SERVICE_CHOICES = [
 
 class CreateNewService(forms.Form):
     name = forms.CharField(max_length=40)
-    description = forms.CharField(widget=forms.Textarea, label='Description')
+    description = forms.CharField(widget=forms.Textarea, max_length=100, label='Description')
     price_hour = forms.DecimalField(
         decimal_places=2, max_digits=5, min_value=0.00)
     field = forms.ChoiceField(choices=SERVICE_CHOICES, required=True)

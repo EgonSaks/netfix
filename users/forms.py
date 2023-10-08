@@ -12,11 +12,14 @@ class DateInput(forms.DateInput):
 
 
 def validate_date_of_birth(value):
-    if value >= date.today():
-        raise ValidationError('Date of birth cannot be in the future.')
+    if value >= date.today() or value.year < 1900 or value.year > 2005:
+        raise ValidationError('Invalid date of birth.')
 
 
 class CustomerSignUpForm(UserCreationForm):
+    username = forms.CharField(max_length=30)
+    email = forms.EmailField(max_length=30)
+
     def clean_username(self):
         username = self.cleaned_data.get('username')
         if User.objects.filter(username=username).exists():
@@ -68,6 +71,8 @@ FIELD_OF_WORK_CHOICES = [
 
 
 class CompanySignUpForm(UserCreationForm):
+    username = forms.CharField(max_length=30)
+    email = forms.EmailField(max_length=30)
     field_of_work = forms.ChoiceField(
         choices=FIELD_OF_WORK_CHOICES,
         required=True,
@@ -116,8 +121,10 @@ class UserLoginForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(UserLoginForm, self).__init__(*args, **kwargs)
 
-    email = forms.EmailField(widget=forms.TextInput(
-        attrs={'placeholder': 'Enter Email'}))
+    email = forms.EmailField(
+        max_length=30,
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Enter Email'}))
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password'}))
 

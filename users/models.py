@@ -25,7 +25,7 @@ SERVICE_CHOICES = (
 
 class User(AbstractUser):
     username = models.CharField(max_length=30, unique=True)
-    email = models.EmailField(max_length=255, unique=True)
+    email = models.EmailField(max_length=50, unique=True)
     is_company = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False)
     USERNAME_FIELD = 'email'
