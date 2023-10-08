@@ -29,6 +29,8 @@ To run the application, execute the following command in the project directory:
 ```bash
 python3 -m venv env 
 source env/bin/activate
+python3 manage.py makemigrations
+python3 manage.py migrate
 python3 manage.py runserver
 ```
 
